@@ -1,0 +1,12 @@
+﻿#showColor {
+    font-family: sans-serif;
+    width: fit-content;
+    padding: 10px;
+    color: white;
+}
+
+#myCanvas {
+    border: 1px solid black;
+    display: block;
+    margin-bottom: 10px;
+}
