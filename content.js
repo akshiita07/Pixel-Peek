@@ -65,4 +65,17 @@
             canvas.remove();
         });
     });
+
+    // Listen for the "stop" message to remove the canvas
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        if (message.action === 'stop') {
+            const canvas = document.getElementById('eyedropperCanvas');
+            if (canvas) {
+                canvas.remove();
+                sendResponse({ success: true, message: "PixelPeek stopped successfully." });
+            } else {
+                sendResponse({ success: false, message: "No canvas found to remove." });
+            }
+        }
+    });
 })();

@@ -30,4 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Stop PixelPeek
+    document.getElementById('stop').addEventListener('click', () => {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            if (!tabs || tabs.length === 0) {
+                console.error("No active tab found.");
+                return;
+            }
+
+            const activeTab = tabs[0];
+
+            // Send a message to the content script to stop PixelPeek
+            chrome.tabs.sendMessage(activeTab.id, { action: 'stop' }, (response) => {
+                if (chrome.runtime.lastError) {
+                    console.error("Error sending stop message:", chrome.runtime.lastError.message);
+                } else {
+                    console.log("PixelPeek stopped:", response);
+                }
+            });
+        });
+    });
 });

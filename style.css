@@ -4,7 +4,8 @@
     cursor: crosshair;
 }
 
-#start {
+#start,
+#stop {
     padding: 10px;
     background-color: #4CAF50;
     border: 1px solif #4CAF50;
