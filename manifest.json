@@ -1,8 +1,9 @@
 ﻿{
     "name":"PixelPeek",
     "version":"0.0.1",
-    "manifest_version": 2,
-    "browser_action": {
+    "manifest_version": 3,
+    "description": "Eyedropper tool for viewing rgb or hex color codes of any webpage.",
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "logo.png"
     },
@@ -12,6 +13,11 @@
     "permissions": [
         "activeTab",
         "storage",
+        "tabs",
         "scripting"
-    ]
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": ["<all_urls>"]
 }

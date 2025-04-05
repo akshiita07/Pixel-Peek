@@ -1,12 +1,12 @@
-﻿#showColor {
-    font-family: sans-serif;
-    width: fit-content;
-    padding: 10px;
-    color: white;
-}
-
-#myCanvas {
+﻿#myCanvas {
     display: block;
     margin-bottom: 10px;
     cursor: crosshair;
+}
+
+#start {
+    padding: 10px;
+    background-color: #4CAF50;
+    border: 1px solif #4CAF50;
+    border-radius: 20px;
 }
